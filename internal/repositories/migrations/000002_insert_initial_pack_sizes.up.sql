@@ -1,0 +1,1 @@
+INSERT INTO pack_sizes (size) VALUES (5000), (2000), (1000), (500), (250) ON CONFLICT DO NOTHING;
