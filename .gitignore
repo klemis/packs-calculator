@@ -23,3 +23,10 @@ go.work.sum
 
 # env file
 .env
+
+# IDE directories
+.idea/
+
+# Logs and temporary files
+*.log
+.DS_Store
