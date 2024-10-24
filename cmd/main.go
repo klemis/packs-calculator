@@ -44,7 +44,7 @@ func registerRoutes(router *gin.Engine, handlers *handlers.Handler) {
 }
 
 // initializePacksCalculatorService sets up the database and returns a new PacksCalculatorService instance.
-func initializePacksCalculatorService() (*services.PacksCalculatorService, func(), error) {
+func initializePacksCalculatorService() (services.PacksCalculator, func(), error) {
 	// Initialize the database.
 	db, cleanup, err := repositories.InitAndCloseDB()
 	if err != nil {
