@@ -53,7 +53,7 @@ func initializePacksCalculatorService() (*services.PacksCalculatorService, func(
 
 	// Initialize pack size repository and service.
 	packSizeRepo := repositories.NewSQLPackSizeRepository(db)
-	service := services.NewPacksCalculator(packSizeRepo)
+	service := services.NewPacksCalculatorService(packSizeRepo)
 
 	return service, cleanup, nil
 }

@@ -4,13 +4,20 @@ import (
 	"github.com/klemis/packs-calculator/internal/repositories"
 )
 
+// PacksCalculator defines the interface for creating and deleting and calculating packs.
+type PacksCalculator interface {
+	AddPackSize(size uint32) error
+	DeletePackSize(size uint32) error
+	CalculatePacks(orderQty uint32) (map[uint32]uint32, error)
+}
+
 // PacksCalculatorService is an implementation of PacksCalculatorService
 type PacksCalculatorService struct {
 	repo repositories.PackSizeRepository
 }
 
-// NewPacksCalculator creates a new instance of PacksCalculator with injected repository.
-func NewPacksCalculator(packSizeRepo repositories.PackSizeRepository) *PacksCalculatorService {
+// NewPacksCalculatorService creates a new instance of PacksCalculator with injected repository.
+func NewPacksCalculatorService(packSizeRepo repositories.PackSizeRepository) PacksCalculator {
 	return &PacksCalculatorService{
 		repo: packSizeRepo,
 	}

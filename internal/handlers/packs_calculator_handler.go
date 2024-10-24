@@ -9,11 +9,11 @@ import (
 )
 
 type Handler struct {
-	service *services.PacksCalculatorService
+	service services.PacksCalculator
 }
 
 // NewHandler creates a new Handler with the provided PacksCalculatorService.
-func NewHandler(packsCalculatorService *services.PacksCalculatorService) *Handler {
+func NewHandler(packsCalculatorService services.PacksCalculator) *Handler {
 	return &Handler{
 		service: packsCalculatorService,
 	}
